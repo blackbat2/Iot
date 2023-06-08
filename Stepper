@@ -1,0 +1,38 @@
+#define A   6
+#define An  A2
+#define B   5
+#define Bn  3
+
+void stepper(bool a,bool b, bool c, bool d)
+{
+  digitalWrite(A,a);
+  digitalWrite(B,b);
+  digitalWrite(An,c);  
+  digitalWrite(Bn,d);   
+  }
+
+void setup() {
+pinMode(A,OUTPUT);
+pinMode(B,OUTPUT);
+pinMode(An,OUTPUT);
+pinMode(Bn,OUTPUT); 
+}
+
+void loop() {
+stepper(0,1,1,1);
+delay(1);
+stepper(0,0,1,1);
+delay(1);
+stepper(1,0,1,1);
+delay(1);
+stepper(1,0,0,1);
+delay(1);
+stepper(1,1,0,1);
+delay(1);
+stepper(1,1,0,0);
+delay(1);
+stepper(1,1,1,0);
+delay(1);
+stepper(0,1,1,0);
+delay(1); 
+}
